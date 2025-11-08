@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import testimonials from '../../content/testimonials.json';
+---
+
+<Layout 
+  title="Testimonials" 
+  description="Read what our clients say about their experience with Noda Ueki and Bonsai's Japanese landscaping and Bonsai services."
+>
+  <!-- Page Hero -->
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?w=1920&q=80');">
+    <div class="hero-content">
+      <h1>Client Testimonials</h1>
+      <p>Hear from those we've had the pleasure of working with</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Grid -->
+  <section class="section">
+    <div class="container">
+      <p class="text-center lead" style="max-width: 700px; margin: 0 auto var(--spacing-xl);">We're honored to work with clients who appreciate the art and philosophy of Japanese landscaping. Here's what they have to say about their experience.</p>
+      
+      <div class="testimonials-grid">
+        {testimonials.map((testimonial) => (
+          <div class={`testimonial-card card ${testimonial.featured ? 'featured' : ''}`}>
+            <div class="card-content">
+              <div class="stars">
+                {"★".repeat(testimonial.rating)}
+              </div>
+              <p class="testimonial-text">"{testimonial.text}"</p>
+              <div class="testimonial-author">
+                <strong>{testimonial.name}</strong>
+                <span class="location">{testimonial.location}</span>
+              </div>
+              <p class="service-type">{testimonial.service}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <p class="stat-label">Completed Projects</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <p class="stat-label">Client Satisfaction</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <p class="stat-label">Years Experience</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <p class="stat-label">Ongoing Maintenance Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Why Clients Choose Us</h2>
+      
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <h3>Authentic Expertise</h3>
+          <p>Trained in traditional Japanese techniques with deep understanding of horticultural principles and design philosophy.</p>
+        </div>
+        
+        <div class="reason-card">
+          <h3>Personalized Service</h3>
+          <p>Every project receives individual attention. We take time to understand your vision and create designs that reflect your unique space.</p>
+        </div>
+        
+        <div class="reason-card">
+          <h3>Long-Term Relationships</h3>
+          <p>Gardens mature over time. We build lasting relationships with clients, providing ongoing care and guidance as your garden evolves.</p>
+        </div>
+        
+        <div class="reason-card">
+          <h3>Quality Craftsmanship</h3>
+          <p>Meticulous attention to detail in every aspect - from plant selection to pruning technique to stone placement.</p>
+        </div>
+        
+        <div class="reason-card">
+          <h3>Climate Adapted</h3>
+          <p>We select species and techniques specifically suited to the Pacific Northwest while maintaining authentic Japanese aesthetics.</p>
+        </div>
+        
+        <div class="reason-card">
+          <h3>Transparent Process</h3>
+          <p>Clear communication, detailed proposals, and realistic timelines ensure you know exactly what to expect at every stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Join our community of satisfied clients and transform your outdoor space.</p>
+      <a href="/contact" class="btn btn-primary" style="margin-top: var(--spacing-md);">Schedule a Consultation</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .lead {
+    font-size: var(--font-size-quote);
+    color: var(--color-text-light);
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .testimonial-card {
+    height: 100%;
+  }
+  
+  .testimonial-card.featured {
+    border: 2px solid var(--color-accent);
+  }
+  
+  .stars {
+    color: var(--color-accent);
+    font-size: 24px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .testimonial-text {
+    font-size: var(--font-size-quote);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+  
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .testimonial-author strong {
+    color: var(--color-primary);
+    font-size: 18px;
+  }
+  
+  .location {
+    color: var(--color-text-light);
+    font-size: var(--font-size-small);
+  }
+  
+  .service-type {
+    font-size: var(--font-size-small);
+    color: var(--color-accent);
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .stat-item {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .stat-label {
+    font-size: var(--font-size-body);
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .reason-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .reason-card h3 {
+    color: var(--color-primary);
+    font-size: 20px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .reason-card p {
+    margin: 0;
+    color: var(--color-text-light);
+  }
+  
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e3829 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .cta-section h2 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .cta-section p {
+    font-size: var(--font-size-quote);
+  }
+  
+  @media (max-width: 1024px) {
+    .reasons-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .reasons-grid,
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

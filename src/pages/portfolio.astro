@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Portfolio" 
+  description="Explore our completed Japanese landscaping, Ueki, and Bonsai projects throughout the Pacific Northwest."
+>
+  <!-- Page Hero -->
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1623685454423-3ee619eff557?w=1920&q=80');">
+    <div class="hero-content">
+      <h1>Our Portfolio</h1>
+      <p>Transforming spaces through traditional Japanese landscaping</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="section">
+    <div class="container">
+      <p class="text-center lead" style="max-width: 700px; margin: 0 auto var(--spacing-xl);">Each project represents a unique collaboration between traditional Japanese garden principles and the specific character of place and client vision.</p>
+      
+      <div class="portfolio-masonry">
+        <!-- Project 1 -->
+        <div class="portfolio-card card">
+          <img src="https://images.unsplash.com/photo-1623685454423-3ee619eff557?w=800&q=80" alt="Zen courtyard with shaped pines and raked gravel" />
+          <div class="card-content">
+            <div class="project-meta">
+              <span class="project-location">Portland, OR</span>
+              <span class="project-type">Zen Garden</span>
+            </div>
+            <h3>Zen Courtyard Transformation</h3>
+            <p>A neglected urban courtyard becomes a serene meditation space featuring traditional Niwaki-pruned pines, raked gravel garden, and natural stone elements.</p>
+            <div class="project-services">
+              <span>Landscape Design</span>
+              <span>Ueki</span>
+              <span>Installation</span>
+            </div>
+            <a href="/portfolio/zen-courtyard-transformation" class="btn btn-secondary">View Project Details →</a>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="portfolio-card card">
+          <img src="https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?w=800&q=80" alt="Residential front garden with Japanese maple" />
+          <div class="card-content">
+            <div class="project-meta">
+              <span class="project-location">Seattle, WA</span>
+              <span class="project-type">Residential</span>
+            </div>
+            <h3>Residential Front Garden Redesign</h3>
+            <p>Contemporary architecture meets Japanese aesthetics in this welcoming entrance featuring a stunning specimen Japanese maple and layered plantings.</p>
+            <div class="project-services">
+              <span>Landscape Design</span>
+              <span>Ueki</span>
+              <span>Japanese Maple</span>
+            </div>
+            <a href="/portfolio/residential-front-garden-redesign" class="btn btn-secondary">View Project Details →</a>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="portfolio-card card">
+          <img src="https://images.unsplash.com/photo-1519552928909-5ca50ae0d54d?w=800&q=80" alt="Traditional tea garden with stone path" />
+          <div class="card-content">
+            <div class="project-meta">
+              <span class="project-location">Eugene, OR</span>
+              <span class="project-type">Tea Garden</span>
+            </div>
+            <h3>Traditional Tea Garden Installation</h3>
+            <p>An authentic roji (tea garden path) created for a tea ceremony practitioner, complete with traditional elements and symbolic plantings following classical design principles.</p>
+            <div class="project-services">
+              <span>Landscape Design</span>
+              <span>Ueki</span>
+              <span>Traditional Elements</span>
+            </div>
+            <a href="/portfolio/tea-garden-installation" class="btn btn-secondary">View Project Details →</a>
+          </div>
+        </div>
+        
+        <!-- Additional portfolio items -->
+        <div class="portfolio-card card">
+          <img src="https://images.unsplash.com/photo-1604608672516-f1b6123627b7?w=800&q=80" alt="Japanese maple in autumn colors" />
+          <div class="card-content">
+            <div class="project-meta">
+              <span class="project-location">Portland, OR</span>
+              <span class="project-type">Tree Care</span>
+            </div>
+            <h3>Mature Japanese Maple Restoration</h3>
+            <p>Revival and shaping of a 30-year-old Japanese maple that had been neglected, revealing its natural grace through careful Niwaki pruning techniques.</p>
+            <div class="project-services">
+              <span>Ueki</span>
+              <span>Pruning</span>
+              <span>Restoration</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-card card">
+          <img src="https://images.unsplash.com/photo-1617543006359-46c0e2a86210?w=800&q=80" alt="Shaped pine trees in Japanese garden" />
+          <div class="card-content">
+            <div class="project-meta">
+              <span class="project-location">Beaverton, OR</span>
+              <span class="project-type">Pine Garden</span>
+            </div>
+            <h3>Contemporary Pine Garden</h3>
+            <p>Modern minimalist design featuring three cloud-pruned Japanese black pines as living sculptures against a backdrop of gravel and weathered stone.</p>
+            <div class="project-services">
+              <span>Landscape Design</span>
+              <span>Niwaki</span>
+              <span>Cloud Pruning</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-card card">
+          <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=800&q=80" alt="Bonsai tree display" />
+          <div class="card-content">
+            <div class="project-meta">
+              <span class="project-location">Portland, OR</span>
+              <span class="project-type">Bonsai</span>
+            </div>
+            <h3>Private Bonsai Collection</h3>
+            <p>Ongoing care and styling of a 15-tree Bonsai collection, including seasonal maintenance, repotting, and refinement of established specimens.</p>
+            <div class="project-services">
+              <span>Bonsai</span>
+              <span>Maintenance</span>
+              <span>Styling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section section-alt">
+    <div class="container text-center">
+      <h2>Serving the Pacific Northwest</h2>
+      <p>We've completed projects throughout the Portland metro area, Eugene, Salem, and Vancouver, WA. Each region presents unique opportunities to blend Japanese aesthetics with local climate and character.</p>
+      <a href="/contact" class="btn btn-accent" style="margin-top: var(--spacing-md);">Discuss Your Project</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .lead {
+    font-size: var(--font-size-quote);
+    color: var(--color-text-light);
+  }
+  
+  .portfolio-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .portfolio-card img {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-small);
+  }
+  
+  .project-location {
+    color: var(--color-text-light);
+  }
+  
+  .project-type {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  
+  .portfolio-card h3 {
+    font-size: 22px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .project-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-md) 0;
+  }
+  
+  .project-services span {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .portfolio-masonry {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

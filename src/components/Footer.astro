@@ -1,0 +1,159 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Noda Ueki and Bonsai</h3>
+        <p class="footer-tagline">野田植木 - Cultivating harmony with nature through traditional Japanese landscaping.</p>
+        <div class="footer-contact">
+          <p><strong>Email:</strong> <a href="mailto:info@nodaueki.com">info@nodaueki.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a></p>
+          <p><strong>Hours:</strong> By appointment only</p>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services#ueki">Ueki (Japanese Garden Trees)</a></li>
+          <li><a href="/services#bonsai">Bonsai Services</a></li>
+          <li><a href="/services#design">Garden Design</a></li>
+          <li><a href="/services#maintenance">Maintenance Plans</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/gallery">Bonsai Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Noda Ueki and Bonsai. All rights reserved.</p>
+      <p class="footer-credit">Handcrafted with care for authentic Japanese landscaping.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .footer-column h3 {
+    font-size: var(--font-size-h3);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .footer-column h4 {
+    font-size: 20px;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-heading);
+  }
+  
+  .footer-tagline {
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+  }
+  
+  .footer-contact p {
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-contact a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  
+  .footer-contact a:hover {
+    color: var(--color-white);
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-links a {
+    color: var(--color-white);
+    font-size: var(--font-size-small);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+    opacity: 0.9;
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-secondary);
+    opacity: 1;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-credit {
+    font-style: italic;
+  }
+  
+  @media (max-width: 1024px) {
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+    
+    .site-footer {
+      padding: var(--spacing-lg) 0 var(--spacing-md);
+    }
+  }
+</style>
+

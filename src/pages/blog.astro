@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Note: This will work once we set up content collections
+// For now, we'll display placeholder blog cards
+---
+
+<Layout 
+  title="Blog" 
+  description="Expert insights on Japanese landscaping, Ueki techniques, Bonsai care, and garden design philosophy."
+>
+  <!-- Page Hero -->
+  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1920&q=80');">
+    <div class="hero-content">
+      <h1>Resources & Insights</h1>
+      <p>Learn about Japanese landscaping, Ueki, and Bonsai</p>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="section">
+    <div class="container">
+      <p class="text-center lead" style="max-width: 700px; margin: 0 auto var(--spacing-xl);">Explore articles on traditional techniques, seasonal care, design philosophy, and plant profiles to deepen your understanding of Japanese garden arts.</p>
+      
+      <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <article class="blog-card card">
+          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80" alt="Pruning Japanese garden tree" />
+          <div class="card-content">
+            <div class="post-meta">
+              <span class="category">Techniques</span>
+              <span class="date">Oct 15, 2025</span>
+            </div>
+            <h3>Essential Pruning Techniques for Japanese Garden Trees</h3>
+            <p>Learn the fundamental Niwaki pruning techniques that have shaped Japanese gardens for centuries, from branch selection to seasonal timing.</p>
+            <a href="/blog/essential-pruning-techniques-for-japanese-garden-trees" class="read-more">Read Article →</a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 2 -->
+        <article class="blog-card card">
+          <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=800&q=80" alt="Bonsai tree" />
+          <div class="card-content">
+            <div class="post-meta">
+              <span class="category">Bonsai Basics</span>
+              <span class="date">Oct 1, 2025</span>
+            </div>
+            <h3>Choosing Your First Bonsai: A Beginner's Guide</h3>
+            <p>Starting your Bonsai journey? Discover which species are best for beginners and what to look for when selecting your first tree.</p>
+            <a href="/blog/choosing-your-first-bonsai-beginners-guide" class="read-more">Read Article →</a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 3 -->
+        <article class="blog-card card">
+          <img src="https://images.unsplash.com/photo-1604608672516-f1b6123627b7?w=800&q=80" alt="Japanese maple" />
+          <div class="card-content">
+            <div class="post-meta">
+              <span class="category">Plant Care</span>
+              <span class="date">Sept 20, 2025</span>
+            </div>
+            <h3>Seasonal Care Guide: Japanese Maples in Your Garden</h3>
+            <p>Japanese maples are stunning focal points in any garden. Learn how to care for them through each season for optimal health and color.</p>
+            <a href="/blog/seasonal-care-guide-japanese-maples" class="read-more">Read Article →</a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 4 -->
+        <article class="blog-card card">
+          <img src="https://images.unsplash.com/photo-1519552928909-5ca50ae0d54d?w=800&q=80" alt="Japanese garden design" />
+          <div class="card-content">
+            <div class="post-meta">
+              <span class="category">Design Philosophy</span>
+              <span class="date">Sept 5, 2025</span>
+            </div>
+            <h3>Five Principles of Japanese Garden Design</h3>
+            <p>Understanding the philosophical foundations of Japanese garden design: asymmetry, simplicity, naturalness, subtlety, and stillness.</p>
+            <a href="/blog/five-principles-of-japanese-garden-design" class="read-more">Read Article →</a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 5 -->
+        <article class="blog-card card">
+          <img src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?w=800&q=80" alt="Bonsai repotting" />
+          <div class="card-content">
+            <div class="post-meta">
+              <span class="category">Bonsai Techniques</span>
+              <span class="date">Aug 18, 2025</span>
+            </div>
+            <h3>Bonsai Repotting: When, Why, and How</h3>
+            <p>Repotting is crucial for Bonsai health. Learn to recognize when your tree needs repotting and master the step-by-step process.</p>
+            <a href="/blog/bonsai-repotting-when-why-and-how" class="read-more">Read Article →</a>
+          </div>
+        </article>
+        
+        <!-- Blog Post 6 -->
+        <article class="blog-card card">
+          <img src="https://images.unsplash.com/photo-1560961911-ba7ef651a56c?w=800&q=80" alt="Wabi-sabi aesthetic" />
+          <div class="card-content">
+            <div class="post-meta">
+              <span class="category">Design Philosophy</span>
+              <span class="date">July 30, 2025</span>
+            </div>
+            <h3>Creating Wabi-Sabi Aesthetic in Small Spaces</h3>
+            <p>Embrace the beauty of imperfection and impermanence. Learn how to bring Wabi-Sabi principles to your compact garden or patio.</p>
+            <a href="/blog/creating-wabi-sabi-aesthetic-in-small-spaces" class="read-more">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="text-center">Browse by Category</h2>
+      <div class="categories-grid">
+        <a href="/blog/category/techniques" class="category-link">
+          <h3>Techniques</h3>
+          <p>Practical guides to Niwaki, pruning, and traditional methods</p>
+        </a>
+        <a href="/blog/category/bonsai" class="category-link">
+          <h3>Bonsai</h3>
+          <p>Care, styling, and appreciation of miniature trees</p>
+        </a>
+        <a href="/blog/category/design" class="category-link">
+          <h3>Design Philosophy</h3>
+          <p>Understanding the principles that guide Japanese gardens</p>
+        </a>
+        <a href="/blog/category/plant-care" class="category-link">
+          <h3>Plant Care</h3>
+          <p>Species-specific guidance and seasonal maintenance</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .lead {
+    font-size: var(--font-size-quote);
+    color: var(--color-text-light);
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .blog-card img {
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-size: 14px;
+  }
+  
+  .category {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  
+  .date {
+    color: var(--color-text-light);
+  }
+  
+  .blog-card h3 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .read-more {
+    color: var(--color-accent);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .category-link {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all var(--transition-speed);
+    border: 2px solid transparent;
+  }
+  
+  .category-link:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+  }
+  
+  .category-link h3 {
+    color: var(--color-primary);
+    font-size: 20px;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .category-link p {
+    margin: 0;
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+  }
+  
+  @media (max-width: 1024px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

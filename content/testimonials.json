@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah M.",
+    "location": "Portland, OR",
+    "service": "Zen Courtyard Design",
+    "rating": 5,
+    "date": "2025-09-20",
+    "text": "Working with Noda Ueki transformed not just our courtyard, but our daily lives. The attention to detail and understanding of authentic Japanese design principles is evident in every element. Our morning meditation practice has become so much more peaceful in this beautiful space.",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Michael K.",
+    "location": "Seattle, WA",
+    "service": "Front Garden Redesign",
+    "rating": 5,
+    "date": "2025-08-25",
+    "text": "The Japanese maple they selected and placed has become the crown jewel of our property. Their expertise in Ueki techniques is unmatched. Neighbors stop to admire it regularly, and we couldn't be happier with how the entire front garden came together.",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Jennifer L.",
+    "location": "Eugene, OR",
+    "service": "Tea Garden Installation",
+    "rating": 5,
+    "date": "2025-07-15",
+    "text": "As a tea ceremony practitioner, I needed someone who truly understood the cultural significance and design principles of a traditional tea garden. Noda Ueki exceeded my expectations. The garden is both historically authentic and perfectly suited to our Pacific Northwest climate.",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "David R.",
+    "location": "Beaverton, OR",
+    "service": "Bonsai Consultation",
+    "rating": 5,
+    "date": "2025-06-30",
+    "text": "I inherited several Bonsai trees but had no idea how to care for them properly. The consultation was incredibly informative, and the seasonal maintenance plan they created has kept my trees healthy and beautiful. Their knowledge is truly impressive.",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Lisa T.",
+    "location": "Portland, OR",
+    "service": "Pine Tree Pruning",
+    "rating": 5,
+    "date": "2025-05-18",
+    "text": "We had a mature pine tree that was overgrown and shapeless. The Niwaki pruning techniques they used revealed such beautiful natural architecture! It looks like a completely different tree now - elegant and perfectly balanced. Well worth the investment.",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "Robert H.",
+    "location": "Vancouver, WA",
+    "service": "Garden Maintenance",
+    "rating": 5,
+    "date": "2025-04-22",
+    "text": "Their seasonal maintenance service keeps our Japanese garden looking pristine year-round. They understand the specific needs of each plant and tree, and their work is always meticulous. Highly recommend for ongoing care.",
+    "featured": false
+  }
+]
+
