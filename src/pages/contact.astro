@@ -3,25 +3,18 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Contact Us" 
-  description="Schedule a consultation with Noda Ueki and Bonsai. Let's discuss your Japanese garden, Ueki, or Bonsai project."
+  title="Contact" 
+  description="Get in touch with Noda Ueki and Bonsai to discuss your Japanese garden, Ueki, or Bonsai project."
 >
-  <!-- Page Hero -->
-  <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1519552928909-5ca50ae0d54d?w=1920&q=80');">
-    <div class="hero-content">
-      <h1>Get In Touch</h1>
-      <p>Let's discuss your vision for a more beautiful space</p>
-    </div>
-  </section>
-
   <!-- Contact Section -->
   <section class="section">
     <div class="container">
+      <h1>Contact Us</h1>
+      
       <div class="contact-grid">
         <!-- Contact Form -->
         <div class="contact-form-container">
-          <h2>Schedule a Consultation</h2>
-          <p>Fill out the form below and we'll get back to you within 1-2 business days to schedule your consultation.</p>
+          <p>Fill out the form below and we'll get back to you within 1-2 business days.</p>
           
           <form 
             name="contact" 
@@ -49,26 +42,25 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div class="form-group">
-              <label for="phone">Phone (optional)</label>
+              <label for="phone">Phone</label>
               <input type="tel" id="phone" name="phone" />
             </div>
             
             <div class="form-group">
-              <label for="service">Service Interest *</label>
-              <select id="service" name="service" required>
+              <label for="service">Service Interest</label>
+              <select id="service" name="service">
                 <option value="">Select a service...</option>
                 <option value="ueki">Ueki (Japanese Garden Trees)</option>
                 <option value="bonsai">Bonsai Services</option>
-                <option value="design">Garden Design & Installation</option>
-                <option value="maintenance">Maintenance Plans</option>
-                <option value="consultation">General Consultation</option>
-                <option value="other">Other</option>
+                <option value="design">Garden Design</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="consultation">Consultation</option>
               </select>
             </div>
             
             <div class="form-group">
-              <label for="message">Tell us about your project *</label>
-              <textarea id="message" name="message" required placeholder="Describe your vision, goals, and any specific questions you have..."></textarea>
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary">Send Message</button>
@@ -77,99 +69,36 @@ import Layout from '../layouts/Layout.astro';
         
         <!-- Contact Info -->
         <div class="contact-info">
-          <div class="info-card card">
-            <div class="card-content">
-              <h3>Contact Information</h3>
-              
-              <div class="info-item">
-                <h4>Email</h4>
-                <a href="mailto:info@nodaueki.com">info@nodaueki.com</a>
-              </div>
-              
-              <div class="info-item">
-                <h4>Phone</h4>
-                <a href="tel:+15551234567">(555) 123-4567</a>
-              </div>
-              
-              <div class="info-item">
-                <h4>Hours</h4>
-                <p>By appointment only</p>
-              </div>
-              
-              <div class="info-item">
-                <h4>Service Area</h4>
-                <p>Portland metro area and surrounding regions (OR/WA)</p>
-              </div>
+          <div class="info-block">
+            <h3>Get In Touch</h3>
+            
+            <div class="info-item">
+              <strong>Email</strong>
+              <a href="mailto:info@nodaueki.com">info@nodaueki.com</a>
+            </div>
+            
+            <div class="info-item">
+              <strong>Phone</strong>
+              <a href="tel:+15551234567">(555) 123-4567</a>
+            </div>
+            
+            <div class="info-item">
+              <strong>Service Area</strong>
+              <p>We service the South Bay LA area.</p>
             </div>
           </div>
-          
-          <div class="info-card card">
-            <div class="card-content">
-              <h3>What to Expect</h3>
-              <ul class="expectation-list">
-                <li>We'll review your inquiry within 1-2 business days</li>
-                <li>Initial consultations can be scheduled at your site or by phone</li>
-                <li>Consultation fees are applied toward any design or installation services</li>
-                <li>We provide detailed proposals including timeline and pricing</li>
-                <li>Questions are always welcome - we're here to help!</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="quote-card">
-            <blockquote>
-              <p>"A garden is never finished - it's a conversation between the gardener and nature that unfolds over years."</p>
-            </blockquote>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Preview -->
-  <section class="section section-alt">
-    <div class="container">
-      <h2 class="text-center">Common Questions</h2>
-      <p class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-lg);">Before reaching out, you might find answers to your questions in our FAQ.</p>
-      
-      <div class="faq-preview">
-        <div class="faq-item">
-          <h3>How much does a typical project cost?</h3>
-          <p>Projects vary widely based on scope and materials. Small consultations start around a few hundred dollars, while complete garden redesigns typically range from $10,000 to $50,000+. We provide detailed estimates during consultation.</p>
-        </div>
-        
-        <div class="faq-item">
-          <h3>How long does a project take?</h3>
-          <p>Timeline depends on project size: small pruning projects (1 day), courtyard gardens (2-4 weeks), full landscape redesigns (6-12 weeks). We'll provide a detailed timeline in your proposal.</p>
-        </div>
-        
-        <div class="faq-item">
-          <h3>Do you offer ongoing maintenance?</h3>
-          <p>Yes! We offer tiered maintenance plans including seasonal visits, comprehensive care, and full Bonsai collection management. Maintenance ensures your garden matures beautifully over time.</p>
-        </div>
-      </div>
-      
-      <div class="text-center" style="margin-top: var(--spacing-lg);">
-        <a href="/faq" class="btn btn-secondary">View All FAQs</a>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .page-hero {
-    height: 50vh;
-    min-height: 400px;
-  }
-  
   .contact-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: var(--spacing-xl);
-  }
-  
-  .contact-form-container h2 {
-    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
   }
   
   .contact-form-container > p {
@@ -181,22 +110,18 @@ import Layout from '../layouts/Layout.astro';
     background-color: var(--color-white);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
   
   .form-group {
     margin-bottom: var(--spacing-md);
   }
   
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
-  
-  .info-card h3 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-primary);
+  .info-block {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    position: sticky;
+    top: 100px;
   }
   
   .info-item {
@@ -207,80 +132,19 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 0;
   }
   
-  .info-item h4 {
-    font-size: var(--font-size-small);
-    font-weight: 600;
-    color: var(--color-accent);
+  .info-item strong {
+    display: block;
     margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+    font-size: var(--font-size-small);
   }
   
   .info-item a {
-    color: var(--color-primary);
-    font-weight: 500;
+    color: var(--color-text);
   }
   
   .info-item p {
     margin: 0;
-  }
-  
-  .expectation-list {
-    list-style: none;
-  }
-  
-  .expectation-list li {
-    padding: var(--spacing-sm) 0;
-    padding-left: var(--spacing-md);
-    position: relative;
-  }
-  
-  .expectation-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-    font-weight: bold;
-  }
-  
-  .quote-card {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1e3829 100%);
-    color: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-  }
-  
-  .quote-card blockquote {
-    margin: 0;
-  }
-  
-  .quote-card p {
-    font-size: var(--font-size-quote);
-    font-style: italic;
-    margin: 0;
-    line-height: 1.6;
-  }
-  
-  .faq-preview {
-    display: grid;
-    gap: var(--spacing-lg);
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .faq-item {
-    background-color: var(--color-white);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--color-accent);
-  }
-  
-  .faq-item h3 {
-    font-size: 20px;
-    margin-bottom: var(--spacing-sm);
-  }
-  
-  .faq-item p {
-    margin: 0;
-    color: var(--color-text-light);
   }
   
   @media (max-width: 768px) {
@@ -288,9 +152,12 @@ import Layout from '../layouts/Layout.astro';
       grid-template-columns: 1fr;
     }
     
+    .info-block {
+      position: static;
+    }
+    
     .contact-form {
       padding: var(--spacing-md);
     }
   }
 </style>
-

@@ -7,47 +7,28 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <div class="footer-column">
         <h3>Noda Ueki and Bonsai</h3>
-        <p class="footer-tagline">野田植木 - Cultivating harmony with nature through traditional Japanese landscaping.</p>
+        <p class="footer-tagline">野田植木</p>
         <div class="footer-contact">
           <p><strong>Email:</strong> <a href="mailto:info@nodaueki.com">info@nodaueki.com</a></p>
           <p><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a></p>
-          <p><strong>Hours:</strong> By appointment only</p>
+          <p><strong>Service Area:</strong> South Bay LA</p>
         </div>
       </div>
       
       <div class="footer-column">
-        <h4>Services</h4>
+        <h4>Navigation</h4>
         <ul class="footer-links">
-          <li><a href="/services#ueki">Ueki (Japanese Garden Trees)</a></li>
-          <li><a href="/services#bonsai">Bonsai Services</a></li>
-          <li><a href="/services#design">Garden Design</a></li>
-          <li><a href="/services#maintenance">Maintenance Plans</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul class="footer-links">
-          <li><a href="/about">About Us</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
           <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/testimonials">Testimonials</a></li>
           <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>Resources</h4>
-        <ul class="footer-links">
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/gallery">Bonsai Gallery</a></li>
         </ul>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Noda Ueki and Bonsai. All rights reserved.</p>
-      <p class="footer-credit">Handcrafted with care for authentic Japanese landscaping.</p>
+      <p>&copy; {currentYear} Noda Ueki and Bonsai</p>
     </div>
   </div>
 </footer>
@@ -62,8 +43,8 @@ const currentYear = new Date().getFullYear();
   
   .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--spacing-lg);
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
     margin-bottom: var(--spacing-lg);
   }
   
