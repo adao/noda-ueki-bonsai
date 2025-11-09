@@ -119,6 +119,14 @@ em {
   font-style: italic;
 }
 
+ul, ol {
+  padding-left: var(--spacing-md);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
 /* ========================================
    Layout Utilities
    ======================================== */

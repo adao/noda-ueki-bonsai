@@ -7,61 +7,26 @@ import Layout from '../layouts/Layout.astro';
   <section class="section">
     <div class="container">
       <div class="intro-grid">
-        <div class="intro-content">
-          <h1>Noda Ueki and Bonsai</h1>
-          <p class="subtitle">野田植木</p>
-          <p>Traditional Japanese landscaping, Ueki (Japanese garden trees), and Bonsai services for South Bay LA. We honor time-tested traditions while adapting them to your unique space.</p>
-          <p>Whether shaping mature trees using traditional Niwaki techniques or beginning your Bonsai journey, our expertise ensures authentic results that deepen with time.</p>
-        </div>
         <div class="intro-image">
           <img src="https://images.unsplash.com/photo-1604608672516-f1b6123627b7?w=800&q=80" alt="Japanese maple in autumn colors" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Overview -->
-  <section class="section section-alt">
-    <div class="container">
-      <h2>Services</h2>
-      
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Ueki 植木</h3>
-          <p>Traditional Japanese garden tree cultivation and Niwaki pruning techniques that reveal the natural beauty and character of trees.</p>
-          <a href="/services" class="text-link">Learn more →</a>
-        </div>
-        
-        <div class="service-item">
-          <h3>Bonsai 盆栽</h3>
-          <p>The living art of miniature trees - from custom creation and styling to ongoing care and consultation for your collection.</p>
-          <a href="/services" class="text-link">Learn more →</a>
-        </div>
-        
-        <div class="service-item">
-          <h3>Garden Design</h3>
-          <p>Complete Japanese garden design and installation that honors traditional principles while creating spaces perfect for modern living.</p>
-          <a href="/services" class="text-link">Learn more →</a>
-        </div>
-        
-        <div class="service-item">
-          <h3>Maintenance</h3>
-          <p>Seasonal care plans to ensure your garden and Bonsai collection thrive and mature beautifully over time.</p>
-          <a href="/services" class="text-link">Learn more →</a>
+        <div class="intro-content">
+          <p>Traditional Japanese landscaping, Ueki (Japanese garden trees), and Bonsai services for South Bay LA. Founded on a deep respect for centuries-old traditions, we bring authentic expertise to every project. <a href="/about" class="text-link">Learn more about our story</a>.</p>
+          
+          <p>Japanese garden design honors principles of asymmetry, simplicity, and naturalness—creating spaces that feel balanced and timeless. Whether shaping mature trees using traditional Niwaki techniques, cultivating Bonsai, or designing complete landscapes, we focus on work that deepens with time. <a href="/services" class="text-link">Explore our services</a>.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Featured Project -->
-  <section class="section">
+  <section class="section section-alt">
     <div class="container">
       <h2>Featured Project</h2>
       
       <div class="featured-project">
         <img src="https://images.unsplash.com/photo-1623685454423-3ee619eff557?w=1200&q=80" alt="Zen courtyard with shaped pines and raked gravel" />
         <div class="project-info">
-          <h3>Zen Courtyard Transformation</h3>
           <p class="location">South Bay, LA</p>
           <p>A neglected urban courtyard becomes a serene meditation space featuring traditional Niwaki-pruned pines, raked gravel garden, and natural stone elements.</p>
           <a href="/portfolio" class="text-link">View all projects →</a>
@@ -71,7 +36,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Featured Testimonial -->
-  <section class="section section-alt">
+  <section class="section">
     <div class="container">
       <h2>Client Testimonial</h2>
       
@@ -80,9 +45,9 @@ import Layout from '../layouts/Layout.astro';
         <cite>— Sarah M., South Bay LA</cite>
       </blockquote>
       
-      <div class="text-center">
-        <a href="/contact" class="btn btn-primary">Get In Touch</a>
-      </div>
+      <p class="text-center">
+        <a href="/testimonials" class="text-link">See all testimonials →</a>
+      </p>
     </div>
   </section>
 </Layout>
@@ -91,15 +56,9 @@ import Layout from '../layouts/Layout.astro';
   /* Intro Grid */
   .intro-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: var(--spacing-xl);
     align-items: start;
-  }
-  
-  .subtitle {
-    font-size: var(--font-size-h3);
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-md);
   }
   
   .intro-image img {
@@ -107,18 +66,12 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
   }
   
-  /* Services List */
-  .service-list {
-    display: grid;
-    gap: var(--spacing-lg);
+  .intro-content p {
+    margin-bottom: var(--spacing-md);
   }
   
-  .service-item h3 {
-    margin-bottom: var(--spacing-xs);
-  }
-  
-  .service-item p {
-    margin-bottom: var(--spacing-sm);
+  .intro-content p:last-child {
+    margin-bottom: 0;
   }
   
   /* Featured Project */
@@ -127,6 +80,7 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: 1.5fr 1fr;
     gap: var(--spacing-xl);
     align-items: start;
+    margin-top: var(--spacing-lg);
   }
   
   .featured-project img {
