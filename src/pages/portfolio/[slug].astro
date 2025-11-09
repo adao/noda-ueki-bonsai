@@ -1,0 +1,441 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Import all images
+import zenCourtyard from '../../images/portfolio/zen-courtyard-before.jpg';
+import zenCourtyardBefore from '../../images/portfolio/zen-courtyard-before.jpg';
+import residentialGarden from '../../images/portfolio/residential-garden.jpg';
+import residentialGardenBefore from '../../images/portfolio/residential-garden-before.jpg';
+import teaGarden from '../../images/portfolio/tea-garden-before.jpg';
+import teaGardenBefore from '../../images/portfolio/tea-garden-before.jpg';
+import bonsaiTree from '../../images/blog/bonsai-tree.jpg';
+import pruningTree from '../../images/blog/pruning-tree.jpg';
+
+// Define portfolio data
+const portfolioData: Record<string, any> = {
+  'zen-courtyard-transformation': {
+    title: '', // Optional title
+    location: 'South Bay, LA',
+    description: 'A neglected urban courtyard becomes a serene meditation space featuring traditional Niwaki-pruned pines, raked gravel garden, and natural stone elements.',
+    images: [
+      { src: zenCourtyard, alt: 'Zen courtyard completed view', caption: 'Completed courtyard with shaped pines and raked gravel' },
+      { src: zenCourtyardBefore, alt: 'Courtyard before transformation', caption: 'The courtyard before transformation' },
+    ]
+  },
+  'residential-front-garden-redesign': {
+    title: '',
+    location: 'South Bay, LA',
+    description: 'Contemporary architecture meets Japanese aesthetics in this welcoming entrance featuring a stunning specimen Japanese maple and layered plantings.',
+    images: [
+      { src: residentialGarden, alt: 'Completed front garden', caption: 'Welcoming entrance with Japanese maple' },
+      { src: residentialGardenBefore, alt: 'Garden before redesign', caption: 'The garden before redesign' },
+    ]
+  },
+  'tea-garden-installation': {
+    title: '',
+    location: 'South Bay, LA',
+    description: 'An authentic roji (tea garden path) created for a tea ceremony practitioner, complete with traditional elements and symbolic plantings following classical design principles.',
+    images: [
+      { src: teaGarden, alt: 'Traditional tea garden', caption: 'Authentic roji with stone path' },
+      { src: teaGardenBefore, alt: 'Area before tea garden', caption: 'The area before installation' },
+    ]
+  },
+  'mature-japanese-maple-restoration': {
+    title: '',
+    location: 'South Bay, LA',
+    description: 'Revival and shaping of a 30-year-old Japanese maple that had been neglected, revealing its natural grace through careful Niwaki pruning techniques.',
+    images: [
+      { src: bonsaiTree, alt: 'Restored Japanese maple', caption: 'Japanese maple after restoration' },
+    ]
+  },
+  'contemporary-pine-garden': {
+    title: '',
+    location: 'South Bay, LA',
+    description: 'Modern minimalist design featuring cloud-pruned Japanese black pines as living sculptures against a backdrop of gravel and weathered stone.',
+    images: [
+      { src: pruningTree, alt: 'Cloud-pruned pines', caption: 'Japanese black pines as living sculptures' },
+    ]
+  }
+};
+
+// Tell Astro what pages to generate at build time
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'zen-courtyard-transformation' } },
+    { params: { slug: 'residential-front-garden-redesign' } },
+    { params: { slug: 'tea-garden-installation' } },
+    { params: { slug: 'mature-japanese-maple-restoration' } },
+    { params: { slug: 'contemporary-pine-garden' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const project = portfolioData[slug || ''];
+
+if (!project) {
+  return Astro.redirect('/portfolio');
+}
+---
+
+<Layout 
+  title={`Portfolio Project | Noda Ueki and Bonsai`}
+  description={project.description}
+>
+  <section class="section">
+    <div class="container">
+      <a href="/portfolio" class="back-link">← Back to Portfolio</a>
+      
+      <div class="project-layout">
+        <!-- Left Column: Images -->
+        <div class="gallery-column">
+          <div class="main-image-container">
+            <img 
+              id="mainImage" 
+              src={project.images[0].src.src} 
+              alt={project.images[0].alt}
+              class="main-image"
+              data-index="0"
+            />
+            <p id="imageCaption" class="image-caption">{project.images[0].caption}</p>
+          </div>
+          
+          {project.images.length > 1 && (
+            <div class="thumbnails">
+              {project.images.map((image: any, index: number) => (
+                <img 
+                  src={image.src.src}
+                  alt={image.alt}
+                  class={`thumbnail ${index === 0 ? 'active' : ''}`}
+                  data-index={index}
+                  data-caption={image.caption}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+        
+        <!-- Right Column: Info -->
+        <div class="info-column">
+          {project.title && <h1>{project.title}</h1>}
+          <p class="location">{project.location}</p>
+          <p class="description">{project.description}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Fullscreen overlay -->
+  <div id="fullscreenOverlay" class="fullscreen-overlay">
+    <button id="closeFullscreen" class="close-button" aria-label="Close fullscreen">×</button>
+    <button id="prevImage" class="nav-button prev-button" aria-label="Previous image">‹</button>
+    <button id="nextImage" class="nav-button next-button" aria-label="Next image">›</button>
+    <img id="fullscreenImage" src="" alt="" />
+    <p id="fullscreenCaption" class="fullscreen-caption"></p>
+  </div>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+  }
+  
+  .project-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+  }
+  
+  /* Left Column: Gallery */
+  .gallery-column {
+    position: sticky;
+    top: var(--spacing-md);
+  }
+  
+  .main-image-container {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .main-image {
+    width: 100%;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: opacity var(--transition-speed);
+  }
+  
+  .main-image:hover {
+    opacity: 0.95;
+  }
+  
+  .image-caption {
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-light);
+    font-size: var(--font-size-small);
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    border: 2px solid transparent;
+  }
+  
+  .thumbnail:hover {
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+  }
+  
+  .thumbnail.active {
+    border-color: var(--color-accent);
+  }
+  
+  /* Right Column: Info */
+  .info-column h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .location {
+    color: var(--color-text-light);
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  /* Fullscreen overlay */
+  .fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+  }
+  
+  .fullscreen-overlay.active {
+    display: flex;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    z-index: 10001;
+  }
+  
+  .close-button:hover {
+    opacity: 0.7;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    padding: 20px;
+    line-height: 1;
+    transition: background-color var(--transition-speed);
+    z-index: 10001;
+  }
+  
+  .nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .prev-button {
+    left: 20px;
+  }
+  
+  .next-button {
+    right: 20px;
+  }
+  
+  #fullscreenImage {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+  
+  .fullscreen-caption {
+    color: white;
+    margin-top: var(--spacing-md);
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .project-layout {
+      grid-template-columns: 1fr;
+    }
+    
+    .gallery-column {
+      position: static;
+    }
+    
+    .nav-button {
+      font-size: 36px;
+      padding: 15px;
+    }
+    
+    .prev-button {
+      left: 10px;
+    }
+    
+    .next-button {
+      right: 10px;
+    }
+  }
+</style>
+
+<script define:vars={{ images: project.images }}>
+  // Gallery functionality
+  const mainImage = document.getElementById('mainImage');
+  const imageCaption = document.getElementById('imageCaption');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+  const fullscreenImage = document.getElementById('fullscreenImage');
+  const fullscreenCaption = document.getElementById('fullscreenCaption');
+  const closeButton = document.getElementById('closeFullscreen');
+  const prevButton = document.getElementById('prevImage');
+  const nextButton = document.getElementById('nextImage');
+  
+  let currentIndex = 0;
+  const totalImages = images.length;
+  
+  function updateImage(index) {
+    currentIndex = index;
+    const image = images[index];
+    
+    if (mainImage) {
+      mainImage.src = image.src.src;
+      mainImage.alt = image.alt;
+      mainImage.setAttribute('data-index', index);
+    }
+    
+    if (imageCaption) {
+      imageCaption.textContent = image.caption || '';
+      imageCaption.style.display = image.caption ? 'block' : 'none';
+    }
+    
+    // Update active state on thumbnails
+    thumbnails.forEach((thumb, i) => {
+      if (i === index) {
+        thumb.classList.add('active');
+      } else {
+        thumb.classList.remove('active');
+      }
+    });
+  }
+  
+  function updateFullscreenImage(index) {
+    const image = images[index];
+    
+    if (fullscreenImage) {
+      fullscreenImage.src = image.src.src;
+      fullscreenImage.alt = image.alt;
+    }
+    
+    if (fullscreenCaption) {
+      fullscreenCaption.textContent = image.caption || '';
+      fullscreenCaption.style.display = image.caption ? 'block' : 'none';
+    }
+  }
+  
+  function nextImageFunc() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateImage(currentIndex);
+    updateFullscreenImage(currentIndex);
+  }
+  
+  function prevImageFunc() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateImage(currentIndex);
+    updateFullscreenImage(currentIndex);
+  }
+  
+  // Thumbnail click/hover - change main image
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('mouseenter', () => {
+      updateImage(index);
+    });
+  });
+  
+  // Main image click - open fullscreen
+  mainImage?.addEventListener('click', () => {
+    if (fullscreenOverlay) {
+      const index = parseInt(mainImage.getAttribute('data-index') || '0');
+      currentIndex = index;
+      updateFullscreenImage(currentIndex);
+      fullscreenOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  
+  // Navigation buttons in fullscreen
+  prevButton?.addEventListener('click', prevImageFunc);
+  nextButton?.addEventListener('click', nextImageFunc);
+  
+  // Close fullscreen
+  closeButton?.addEventListener('click', () => {
+    fullscreenOverlay?.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  // Close on overlay click
+  fullscreenOverlay?.addEventListener('click', (e) => {
+    if (e.target === fullscreenOverlay) {
+      fullscreenOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (fullscreenOverlay?.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        fullscreenOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else if (e.key === 'ArrowRight') {
+        nextImageFunc();
+      } else if (e.key === 'ArrowLeft') {
+        prevImageFunc();
+      }
+    }
+  });
+</script>

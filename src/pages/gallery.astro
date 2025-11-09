@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import bonsaiTree from '../images/blog/bonsai-tree.jpg';
+import bonsaiRepotting from '../images/blog/bonsai-repotting.jpg';
+import pruningTree from '../images/blog/pruning-tree.jpg';
 ---
 
 <Layout 
@@ -14,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="gallery-list">
         <!-- Item 1 -->
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=1200&q=80" alt="Japanese maple bonsai with red autumn foliage" />
+          <Image src={bonsaiTree} alt="Japanese maple bonsai with red autumn foliage" />
           <div class="item-info">
             <h2>Japanese Maple (Acer palmatum)</h2>
             <p class="style-name">Informal Upright (Moyogi)</p>
@@ -24,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Item 2 -->
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1565005534970-4a86c9ae18a2?w=1200&q=80" alt="Japanese black pine bonsai" />
+          <Image src={pruningTree} alt="Japanese black pine bonsai" />
           <div class="item-info">
             <h2>Japanese Black Pine (Pinus thunbergii)</h2>
             <p class="style-name">Formal Upright (Chokkan)</p>
@@ -34,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Item 3 -->
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1509937528035-ad76254b0356?w=1200&q=80" alt="Cascade style bonsai" />
+          <Image src={bonsaiRepotting} alt="Cascade style bonsai" />
           <div class="item-info">
             <h2>Chinese Juniper (Juniperus chinensis)</h2>
             <p class="style-name">Cascade (Kengai)</p>
@@ -44,7 +48,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Item 4 -->
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1548796277-8c50b5f2f890?w=1200&q=80" alt="Flowering bonsai" />
+          <Image src={bonsaiTree} alt="Flowering bonsai" />
           <div class="item-info">
             <h2>Japanese Flowering Apricot (Prunus mume)</h2>
             <p class="style-name">Slanting (Shakan)</p>
@@ -54,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Item 5 -->
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1604608672516-f1b6123627b7?w=1200&q=80" alt="Japanese maple forest bonsai" />
+          <Image src={bonsaiTree} alt="Japanese maple forest bonsai" />
           <div class="item-info">
             <h2>Japanese Maple Group Planting</h2>
             <p class="style-name">Forest (Yose-ue)</p>

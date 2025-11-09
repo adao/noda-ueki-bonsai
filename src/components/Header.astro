@@ -7,7 +7,6 @@ const currentPath = Astro.url.pathname;
     <nav class="main-nav">
       <a href="/" class="logo">
         <span class="logo-text">Noda Ueki and Bonsai</span>
-        <span class="logo-japanese">野田植木</span>
       </a>
       
       <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -18,8 +17,6 @@ const currentPath = Astro.url.pathname;
       
       <ul class="nav-menu">
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
-        <li><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
-        <li><a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a></li>
         <li><a href="/portfolio" class={currentPath === '/portfolio' ? 'active' : ''}>Portfolio</a></li>
         <li><a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>Contact</a></li>
       </ul>
@@ -31,9 +28,6 @@ const currentPath = Astro.url.pathname;
   .site-header {
     background-color: var(--color-white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
   
   .main-nav {

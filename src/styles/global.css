@@ -30,6 +30,7 @@
   --font-size-quote: 16px;
   --font-size-button: 15px;
   --font-size-small: 14px;
+  --font-size-xs: 12px;  /* Extra small text for notes and fine print */
   
   /* Spacing */
   --spacing-xs: 8px;
@@ -41,6 +42,8 @@
   
   /* Layout */
   --max-width: 1200px;
+  --max-width-readable: 800px;  /* Optimal line length for reading (50-75 characters) */
+  --max-width-form: 700px;  /* Forms are narrower than reading content - keeps inputs at comfortable width and creates focused, action-oriented feel. Common practice is 500-700px range - this is a suggestion, not a strict rule */
   --border-radius: 4px;
   
   /* Transitions */
@@ -202,6 +205,7 @@ li {
 }
 
 .text-link:hover {
+  color: var(--color-primary);
   border-bottom-color: var(--color-primary);
 }
 
@@ -315,4 +319,9 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Add extra padding-bottom to last section before footer */
+main > section:last-child {
+  padding-bottom: var(--spacing-xxl);
 }

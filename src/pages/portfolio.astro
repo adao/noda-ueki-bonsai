@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import zenCourtyard from '../images/portfolio/zen-courtyard-before.jpg';
+import residentialGarden from '../images/portfolio/residential-garden.jpg';
+import teaGarden from '../images/portfolio/tea-garden-before.jpg';
+import bonsaiTree from '../images/blog/bonsai-tree.jpg';
+import pruningTree from '../images/blog/pruning-tree.jpg';
 ---
 
 <Layout 
@@ -14,61 +20,66 @@ import Layout from '../layouts/Layout.astro';
       <div class="portfolio-list">
         <!-- Project 1 -->
         <article class="project">
-          <a href="/portfolio/zen-courtyard-transformation">
-            <img src="https://images.unsplash.com/photo-1623685454423-3ee619eff557?w=1200&q=80" alt="Zen courtyard with shaped pines and raked gravel" />
+          <a href="/portfolio/zen-courtyard-transformation" class="project-image">
+            <Image src={zenCourtyard} alt="Zen courtyard with shaped pines and raked gravel" />
           </a>
           <div class="project-info">
             <p class="client-name">Sarah M.</p>
             <p class="location">South Bay, LA</p>
             <p class="description">A neglected urban courtyard becomes a serene meditation space featuring traditional Niwaki-pruned pines, raked gravel garden, and natural stone elements.</p>
+            <a href="/portfolio/zen-courtyard-transformation" class="text-link">See more →</a>
           </div>
         </article>
         
         <!-- Project 2 -->
         <article class="project">
-          <a href="/portfolio/residential-front-garden-redesign">
-            <img src="https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?w=1200&q=80" alt="Residential front garden with Japanese maple" />
+          <a href="/portfolio/residential-front-garden-redesign" class="project-image">
+            <Image src={residentialGarden} alt="Residential front garden with Japanese maple" />
           </a>
           <div class="project-info">
             <p class="client-name">Michael K.</p>
             <p class="location">South Bay, LA</p>
             <p class="description">Contemporary architecture meets Japanese aesthetics in this welcoming entrance featuring a stunning specimen Japanese maple and layered plantings.</p>
+            <a href="/portfolio/residential-front-garden-redesign" class="text-link">See more →</a>
           </div>
         </article>
         
         <!-- Project 3 -->
         <article class="project">
-          <a href="/portfolio/tea-garden-installation">
-            <img src="https://images.unsplash.com/photo-1519552928909-5ca50ae0d54d?w=1200&q=80" alt="Traditional tea garden with stone path" />
+          <a href="/portfolio/tea-garden-installation" class="project-image">
+            <Image src={teaGarden} alt="Traditional tea garden with stone path" />
           </a>
           <div class="project-info">
             <p class="client-name">Jennifer L.</p>
             <p class="location">South Bay, LA</p>
             <p class="description">An authentic roji (tea garden path) created for a tea ceremony practitioner, complete with traditional elements and symbolic plantings following classical design principles.</p>
+            <a href="/portfolio/tea-garden-installation" class="text-link">See more →</a>
           </div>
         </article>
         
         <!-- Project 4 -->
         <article class="project">
-          <a href="/portfolio/mature-japanese-maple-restoration">
-            <img src="https://images.unsplash.com/photo-1604608672516-f1b6123627b7?w=1200&q=80" alt="Japanese maple in autumn colors" />
+          <a href="/portfolio/mature-japanese-maple-restoration" class="project-image">
+            <Image src={bonsaiTree} alt="Japanese maple in autumn colors" />
           </a>
           <div class="project-info">
             <p class="client-name">David R.</p>
             <p class="location">South Bay, LA</p>
             <p class="description">Revival and shaping of a 30-year-old Japanese maple that had been neglected, revealing its natural grace through careful Niwaki pruning techniques.</p>
+            <a href="/portfolio/mature-japanese-maple-restoration" class="text-link">See more →</a>
           </div>
         </article>
         
         <!-- Project 5 -->
         <article class="project">
-          <a href="/portfolio/contemporary-pine-garden">
-            <img src="https://images.unsplash.com/photo-1617543006359-46c0e2a86210?w=1200&q=80" alt="Shaped pine trees in Japanese garden" />
+          <a href="/portfolio/contemporary-pine-garden" class="project-image">
+            <Image src={pruningTree} alt="Shaped pine trees in Japanese garden" />
           </a>
           <div class="project-info">
             <p class="client-name">Lisa T.</p>
             <p class="location">South Bay, LA</p>
             <p class="description">Modern minimalist design featuring cloud-pruned Japanese black pines as living sculptures against a backdrop of gravel and weathered stone.</p>
+            <a href="/portfolio/contemporary-pine-garden" class="text-link">See more →</a>
           </div>
         </article>
       </div>
@@ -90,12 +101,12 @@ import Layout from '../layouts/Layout.astro';
     align-items: start;
   }
   
-  .project a {
+  .project-image {
     display: block;
     transition: opacity var(--transition-speed);
   }
   
-  .project a:hover {
+  .project-image:hover {
     opacity: 0.9;
   }
   
@@ -117,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
   }
   
   .description {
-    margin: 0;
+    margin: 0 0 var(--spacing-sm) 0;
   }
   
   @media (max-width: 768px) {

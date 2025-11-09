@@ -1,31 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import zenCourtyard from '../images/portfolio/zen-courtyard-before.jpg';
 ---
 
 <Layout title="Noda Ueki and Bonsai | Traditional Japanese Landscaping & Bonsai Services">
-  <!-- Introduction -->
+  <!-- About Content -->
   <section class="section">
     <div class="container">
-      <div class="intro-grid">
-        <div class="intro-image">
-          <img src="https://images.unsplash.com/photo-1604608672516-f1b6123627b7?w=800&q=80" alt="Japanese maple in autumn colors" />
-        </div>
-        <div class="intro-content">
-          <p>Traditional Japanese landscaping, Ueki (Japanese garden trees), and Bonsai services for South Bay LA. Founded on a deep respect for centuries-old traditions, we bring authentic expertise to every project. <a href="/about" class="text-link">Learn more about our story</a>.</p>
-          
-          <p>Japanese garden design honors principles of asymmetry, simplicity, and naturalness—creating spaces that feel balanced and timeless. Whether shaping mature trees using traditional Niwaki techniques, cultivating Bonsai, or designing complete landscapes, we focus on work that deepens with time. <a href="/services" class="text-link">Explore our services</a>.</p>
-        </div>
+      <div class="hero-text">
+        <h1>Noda Ueki and Bonsai</h1>
+        <p class="japanese">野田植木と盆栽</p>
+        <p class="subtitle">Serving the South Bay of Los Angeles</p>
       </div>
+      
+      <p>Noda Ueki and Bonsai was founded on a deep respect for the centuries-old traditions of Japanese horticulture. Having trained under master gardeners in Japan, we bring authentic expertise to every project while thoughtfully adapting traditional techniques to work harmoniously with the South Bay LA climate and modern lifestyles.</p>
+      
+      <h2 class="services-heading">Services</h2>
+      <p>We specialize in traditional Japanese landscaping services including Ueki (Japanese garden trees), Niwaki (tree pruning techniques), and Bonsai care. Whether you're looking to create a complete Japanese garden, maintain existing trees, or care for Bonsai, we work with you to bring your vision to life. Our process begins with an initial consultation where we understand your space and goals, followed by a detailed estimate. From there, we handle installation and offer ongoing maintenance to ensure your garden thrives through every season.</p>
     </div>
   </section>
 
-  <!-- Featured Project -->
+  <!-- Latest Project -->
   <section class="section section-alt">
     <div class="container">
-      <h2>Featured Project</h2>
+      <h2>Latest Project</h2>
       
       <div class="featured-project">
-        <img src="https://images.unsplash.com/photo-1623685454423-3ee619eff557?w=1200&q=80" alt="Zen courtyard with shaped pines and raked gravel" />
+        <Image src={zenCourtyard} alt="Zen courtyard with shaped pines and raked gravel" />
         <div class="project-info">
           <p class="location">South Bay, LA</p>
           <p>A neglected urban courtyard becomes a serene meditation space featuring traditional Niwaki-pruned pines, raked gravel garden, and natural stone elements.</p>
@@ -34,47 +36,37 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
-
-  <!-- Featured Testimonial -->
-  <section class="section">
-    <div class="container">
-      <h2>Client Testimonial</h2>
-      
-      <blockquote class="featured-testimonial">
-        <p>"Working with Noda Ueki transformed not just our courtyard, but our daily lives. The attention to detail and understanding of authentic Japanese design principles is evident in every element."</p>
-        <cite>— Sarah M., South Bay LA</cite>
-      </blockquote>
-      
-      <p class="text-center">
-        <a href="/testimonials" class="text-link">See all testimonials →</a>
-      </p>
-    </div>
-  </section>
 </Layout>
 
 <style>
-  /* Intro Grid */
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: var(--spacing-xl);
-    align-items: start;
+  /* Hero Text */
+  .hero-text {
+    margin-bottom: var(--spacing-lg);
   }
   
-  .intro-image img {
-    border-radius: var(--border-radius);
-    width: 100%;
+  .hero-text h1 {
+    margin-bottom: var(--spacing-sm);
   }
   
-  .intro-content p {
-    margin-bottom: var(--spacing-md);
+  .japanese {
+    color: var(--color-text-light);
+    font-weight: 400;
+    font-size: var(--font-size-h3);
+    margin: 0 0 var(--spacing-sm) 0;
   }
   
-  .intro-content p:last-child {
-    margin-bottom: 0;
+  .subtitle {
+    color: var(--color-text-light);
+    font-size: var(--font-size-body);
+    margin: 0;
   }
   
-  /* Featured Project */
+  /* Services Section */
+  .services-heading {
+    margin-top: var(--spacing-lg);
+  }
+  
+  /* Latest Project */
   .featured-project {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -94,32 +86,8 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: var(--spacing-sm);
   }
   
-  /* Featured Testimonial */
-  .featured-testimonial {
-    max-width: 700px;
-    margin: 0 auto var(--spacing-lg);
-    padding: var(--spacing-lg);
-    background-color: var(--color-white);
-    border-radius: var(--border-radius);
-    border-left: 3px solid var(--color-accent);
-  }
-  
-  .featured-testimonial p {
-    font-size: var(--font-size-quote);
-    font-style: italic;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-  }
-  
-  .featured-testimonial cite {
-    font-style: normal;
-    color: var(--color-text-light);
-    font-size: var(--font-size-small);
-  }
-  
   /* Responsive */
   @media (max-width: 768px) {
-    .intro-grid,
     .featured-project {
       grid-template-columns: 1fr;
     }

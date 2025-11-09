@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import founderImg from '../images/general/founder.jpg';
 ---
 
 <Layout 
@@ -22,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
         
         <div class="about-image">
           <div class="founder-photo">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="Founder" />
+            <Image src={founderImg} alt="Founder" />
           </div>
         </div>
       </div>
@@ -47,11 +49,6 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 0;
   }
   
-  .founder-photo {
-    position: sticky;
-    top: 100px;
-  }
-  
   .founder-photo img {
     border-radius: 50%;
     width: 100%;
@@ -64,10 +61,6 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 768px) {
     .about-layout {
       grid-template-columns: 1fr;
-    }
-    
-    .founder-photo {
-      position: static;
     }
     
     .founder-photo img {

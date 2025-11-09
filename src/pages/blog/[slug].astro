@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import matter from 'gray-matter';
+
+// Get all blog posts
+const contentDir = join(process.cwd(), 'content', 'blog');
+const files = await readdir(contentDir);
+const blogPosts = await Promise.all(
+  files
+    .filter(file => file.endsWith('.md'))
+    .map(async (file) => {
+      const content = await readFile(join(contentDir, file), 'utf-8');
+      const { data } = matter(content);
+      return data;
+    })
+);
+
+// Tell Astro what pages to generate at build time
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'essential-pruning-techniques-for-japanese-garden-trees' } },
+    { params: { slug: 'choosing-your-first-bonsai-beginners-guide' } },
+    { params: { slug: 'seasonal-care-guide-japanese-maples' } },
+    { params: { slug: 'five-principles-of-japanese-garden-design' } },
+    { params: { slug: 'bonsai-repotting-when-why-and-how' } },
+    { params: { slug: 'creating-wabi-sabi-aesthetic-in-small-spaces' } },
+    { params: { slug: 'moss-and-ground-cover-in-japanese-landscapes' } },
+    { params: { slug: 'pine-trees-in-japanese-gardens-symbolism-and-care' } },
+    { params: { slug: 'understanding-bonsai-styles-formal-and-informal' } },
+    { params: { slug: 'winter-protection-for-outdoor-bonsai' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const post = blogPosts.find(p => p.slug === slug);
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+---
+
+<Layout 
+  title={`${post.title} | Noda Ueki and Bonsai`}
+  description={post.excerpt}
+>
+  <section class="section">
+    <div class="container">
+      <a href="/blog" class="back-link">← Back to Blog</a>
+      
+      <article class="blog-article">
+        <header class="article-header">
+          <h1>{post.title}</h1>
+          <div class="meta">
+            <time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            <span class="author">By {post.author}</span>
+          </div>
+          <div class="category-tags">
+            <span class="category">{post.category}</span>
+          </div>
+        </header>
+        
+        {post.image && (
+          <img src={post.image} alt={post.title} class="featured-image" />
+        )}
+        
+        <div class="article-content">
+          <p class="excerpt">{post.excerpt}</p>
+          <p><em>Full article content coming soon...</em></p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+  }
+  
+  .blog-article {
+    max-width: var(--max-width-readable);
+    margin: 0 auto;
+  }
+  
+  .article-header {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .category-tags {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .category {
+    display: inline-block;
+    background-color: var(--color-background);
+    color: var(--color-accent);
+    padding: 4px 12px 4px 0;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .article-header h1 {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+  }
+  
+  .meta {
+    display: flex;
+    gap: var(--spacing-md);
+    color: var(--color-text-light);
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .featured-image {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .article-content {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  
+  .excerpt {
+    font-size: 18px;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  @media (max-width: 768px) {
+    .meta {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  }
+</style>
+

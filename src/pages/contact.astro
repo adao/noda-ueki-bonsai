@@ -73,19 +73,26 @@ import Layout from '../layouts/Layout.astro';
         <div class="info-grid">
           <div class="info-item">
             <strong>Email</strong>
-            <a href="mailto:info@nodaueki.com">info@nodaueki.com</a>
+            <a href="mailto:uekiandbonsai@yahoo.com">uekiandbonsai@yahoo.com</a>
           </div>
           
           <div class="info-item">
             <strong>Phone</strong>
-            <a href="tel:+15551234567">(555) 123-4567</a>
+            <a href="tel:+13105324318">(310) 532-4318</a>
+            <span class="note">(call after 5pm)</span>
           </div>
           
           <div class="info-item">
             <strong>Service Area</strong>
-            <p>We service the South Bay LA area.</p>
+            <p>We proudly serve Redondo Beach, Rancho Palos Verdes, Torrance, Gardena, El Segundo, Hawthorne, and surrounding South Bay cities in Los Angeles.</p>
           </div>
         </div>
+      </div>
+      
+      <!-- FAQ Callout -->
+      <div class="faq-callout">
+        <h3>Have Questions?</h3>
+        <p>Check out our <a href="/faq">Frequently Asked Questions</a> for answers to common questions about our services, pricing, and process.</p>
       </div>
     </div>
   </section>
@@ -93,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .contact-form-container {
-    max-width: 700px;
+    max-width: var(--max-width-form);
     margin-bottom: var(--spacing-xxl);
   }
   
@@ -113,7 +120,7 @@ import Layout from '../layouts/Layout.astro';
   }
   
   .contact-info {
-    max-width: 700px;
+    margin-top: var(--spacing-xxl);
   }
   
   .contact-info h2 {
@@ -123,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
   .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xxl);
   }
   
   .info-item strong {
@@ -139,6 +146,37 @@ import Layout from '../layouts/Layout.astro';
   
   .info-item p {
     margin: 0;
+  }
+  
+  .info-item .note {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    margin-top: 4px;
+  }
+  
+  /* FAQ Callout */
+  .faq-callout {
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .faq-callout h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+  
+  .faq-callout p {
+    margin: 0;
+  }
+  
+  .faq-callout a {
+    color: var(--color-accent);
+    font-weight: 500;
   }
   
   @media (max-width: 768px) {
