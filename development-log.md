@@ -98,10 +98,95 @@ Each branch will be a complete, production-ready implementation of that design.
 
 ---
 
+## Major Refactor - Nov 8, 2025 (Evening)
+
+**User Feedback: Simplify Everything**
+
+The initial implementation was too busy, too much text, too sales-y. User wanted:
+- Business card aesthetic, not Wikipedia
+- Artistic integrity over sales copy
+- Handcrafted feel, not cookie-cutter
+- One thing at a time, not cluttered columns
+- Simple and lovely
+
+**Changes Made:**
+
+1. **Typography**
+   - Removed serif font entirely, using Noto Sans JP for everything
+   - Reduced all font sizes significantly (H1: 48px → 32px, Body: 18px → 15px)
+   - Lighter font weights (600 → 500/400)
+
+2. **Navigation**
+   - Simplified to 5 items: Home, About, Services, Portfolio, Contact
+   - Removed dropdown menus (Company, Resources)
+
+3. **Home Page**
+   - Removed hero section entirely
+   - Simple intro with founder vision
+   - Services: Brief one-sentence descriptions with learn more links (not cards)
+   - Featured Project: Single project (manually selected)
+   - Featured Testimonial: Single testimonial (not 3)
+   - Removed "Our Philosophy" section
+
+4. **About Page**
+   - Consolidated into single section
+   - Three paragraphs: Intro, Approach, Design Philosophy
+   - Added founder photo placeholder (will be circle image)
+
+5. **Contact Page**
+   - Removed FAQ preview
+   - Service area: one sentence ("We service the South Bay LA area")
+
+6. **Services Page**
+   - Removed 2-column layouts
+   - Top-to-bottom, simple structure
+   - Removed maintenance "plans" (don't dictate business operations)
+   - Removed 5-step design process (too prescriptive)
+   - Just: Ueki, Bonsai, Design, Maintenance with general descriptions
+
+7. **Portfolio Page**
+   - Full-width rows (no masonry, no 3-column)
+   - Removed tags from cards
+   - Removed "View Project Details" buttons
+   - Removed CTA sections
+
+8. **Gallery Page**
+   - Full-width rows
+   - Removed tags from cards
+   - Added glossary section for Bonsai styles
+
+9. **Testimonials Page**
+   - Full-width rows (no 3-column grid)
+   - Simple, clean presentation
+
+10. **Blog Page**
+    - Removed "Browse by Category" section
+    - Removed "Read Article →" links (redundant)
+
+11. **Footer**
+    - 2 columns instead of 4
+    - Simplified content
+    - Removed tagline fluff
+
+12. **Buttons & CTAs**
+    - Made buttons smaller (10px padding vs 14px)
+    - Lighter borders (1px vs 2px)
+    - Removed green "accent" buttons
+    - Removed CTAs throughout site
+
+13. **Location**
+    - Changed from Portland, OR to South Bay LA throughout
+
+**Design Philosophy Shift**
+- Original plan had 3 design concepts, but "Modern Simplicity" is what was actually wanted
+- Focus on minimalism, clarity, one thing at a time
+- Let content breathe, don't overwhelm
+
 ## Next Steps
 
-- [ ] Implement remaining two design concepts
-- [ ] Performance testing across all three designs
-- [ ] Accessibility audit (WCAG 2.1 AA)
-- [ ] Cross-browser testing
+- [ ] Review with client (friend)
+- [ ] Get actual photos to replace stock images
+- [ ] Get actual founder photo for About page
+- [ ] Potentially flesh out 2-3 blog articles
+- [ ] Decide if other design concepts still needed (probably not)
 

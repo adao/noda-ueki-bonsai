@@ -4,25 +4,24 @@ Client: Noda Ueki and Bonsai
 ## Overview
 The client, Noda Ueki and Bonsai, is a Japanese landscaping business specializing in Noda Ueki and Bonsai services. They require a new website to showcase their expertise and attract potential clients. The website should have a clean, modern design that reflects the Japanese aesthetic and the business's specialties.
 
-## Website Structure
+## Website Structure (Simplified)
 1. Home
-2. Company
-   - About Us
-   - Contact
+2. About
 3. Services
 4. Portfolio
-5. Resources
-   - Blog
-   - FAQ
-   - Bonsai Gallery
-6. Testimonials
+5. Contact
+
+Additional pages (not in main nav):
+- Blog
+- FAQ
+- Gallery
 
 ## Design Concepts
-1. Zen Harmony
+1. Zen Harmony (Implemented - Simplified)
    - Color Palette: Deep forest green (#2B4F3A), warm beige (#D9C8B0), soft red (#B56D6D), off-white (#F6F6F6)
-   - Fonts: Noto Serif JP (headings), Noto Sans JP (body text)
-   - Font Sizes: H1 (48px), H2 (36px), H3 (24px), Body Text (18px), Quotes (22px), Buttons (20px)
-   - Design Elements: Full-width hero image, bamboo texture background, minimalistic icons, masonry-style layout for portfolio and gallery
+   - Fonts: Noto Sans JP (all text - refined, no serif)
+   - Font Sizes: H1 (32px), H2 (24px), H3 (18px), Body Text (15px), Quotes (16px), Buttons (15px)
+   - Design Elements: Simple, clean layouts, full-width rows (no columns), minimal design, business card aesthetic, artistic integrity over sales copy
 
 2. Traditional Elegance
    - Color Palette: Muted green (#4E6E5D), pale gold (#D9C8B0), deep red (#8F3D3D), cream (#F4EEE2)
